@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 
 class RoundedElevatedButton extends StatelessWidget {
-  const RoundedElevatedButton({
+  const RoundedElevatedButton( {
     Key? key, this.title, this.onPressed, this.padding,
   }) : super(key: key);
 

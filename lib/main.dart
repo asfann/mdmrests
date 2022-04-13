@@ -1,12 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mdmrest/controllers/tableController.dart';
+import 'package:mdmrest/controllers/waiterController.dart';
 import 'controller_bindings.dart';
 import 'screens/root.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  Get.put(WaiterController());
+  Get.put(TableController());
   runApp(const MyApp());
 }
 
