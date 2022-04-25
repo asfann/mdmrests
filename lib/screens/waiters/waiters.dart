@@ -5,6 +5,7 @@ import 'package:mdmrest/widgets/icon_buttons.dart';
 import 'package:mdmrest/controllers/waiterController.dart';
 
 class Waiters extends GetView<WaiterController> {
+  WaiterController controller = Get.put(WaiterController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(

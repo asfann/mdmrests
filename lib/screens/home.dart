@@ -7,14 +7,15 @@ import 'package:mdmrest/screens/waiters/waiters.dart';
 import 'package:mdmrest/widgets/icon_buttons.dart';
 import 'package:mdmrest/widgets/rounded_elevated_button.dart';
 
-import '../config.dart';
+
+
+
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
-
-  @override
+    @override
   Widget build(BuildContext context) {
-    final _authController = Get.find<AuthController>();
+    AuthController _authController = Get.find();
     return Scaffold(
       appBar: AppBar(
           iconTheme: Theme.of(context).iconTheme,
@@ -29,18 +30,6 @@ class Home extends StatelessWidget {
               _authController.signOut();
               },),
           ),
-        // actions: [
-        //   Padding(
-        //       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        //       child: Center(
-        //         child: IconBorder(
-        //           icon: CupertinoIcons.add,
-        //           onTap: () {},
-        //         ),
-        //       )
-        //
-        //   ),
-        // ],
       ),
       body: Container(
         child:  Column(
@@ -48,8 +37,8 @@ class Home extends StatelessWidget {
               RoundedElevatedButton(title: 'Waiters', onPressed: () {
                Get.to(() => Waiters());
               },   padding: EdgeInsets.symmetric(
-                horizontal: Config.screenWidth! * 0.4,
-                vertical: Config.screenHeight! * 0.02,
+                horizontal: MediaQuery.of(context).size.width * 0.4,
+                vertical: MediaQuery.of(context).size.height * 0.02,
               ),
               ),
               SizedBox(
@@ -58,8 +47,8 @@ class Home extends StatelessWidget {
               RoundedElevatedButton(title: 'Tables', onPressed: () {
                 Get.to(() => Tables());
               },    padding: EdgeInsets.symmetric(
-                horizontal: Config.screenWidth! * 0.4,
-                vertical: Config.screenHeight! * 0.02,
+                horizontal: MediaQuery.of(context).size.width * 0.4,
+                vertical: MediaQuery.of(context).size.height * 0.02,
               ),
 
               ),
@@ -68,8 +57,8 @@ class Home extends StatelessWidget {
               ), RoundedElevatedButton(title: 'Dishes ', onPressed: () {
 
               },    padding: EdgeInsets.symmetric(
-                horizontal: Config.screenWidth! * 0.4,
-                vertical: Config.screenHeight! * 0.02,
+                horizontal: MediaQuery.of(context).size.width * 0.4,
+                vertical: MediaQuery.of(context).size.height * 0.02,
               ),
               )
             ],

@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mdmrest/controllers/tableController.dart';
-import 'package:mdmrest/controllers/waiterController.dart';
-import 'controller_bindings.dart';
-import 'screens/root.dart';
+import 'package:mdmrest/screens/root.dart';
+import 'bindings/bindings.dart' as di;
+import 'config.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  Get.put(WaiterController());
-  Get.put(TableController());
+  await di.init();
+
   runApp(const MyApp());
 }
 
@@ -20,8 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
-      initialBinding: ControllerBindings(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 textTheme: GoogleFonts.amaranthTextTheme(

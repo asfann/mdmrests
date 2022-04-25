@@ -7,6 +7,7 @@ import 'package:mdmrest/widgets/icon_buttons.dart';
 class Tables extends GetView<TableController> {
   @override
   Widget build(BuildContext context) {
+    TableController controller = Get.put(TableController());
     return Scaffold(
         appBar: AppBar(
           iconTheme: Theme.of(context).iconTheme,

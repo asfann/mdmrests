@@ -12,12 +12,6 @@ FirebaseAuth auth = FirebaseAuth.instance;
 
 User? get userProfile => auth.currentUser;
 
-@override
-  void onInit() {
-  displayName = userProfile != null ? userProfile!.displayName! : '';
-  super.onInit();
-  }
-
 
 void singIn(String email,String password) async{
   try{
